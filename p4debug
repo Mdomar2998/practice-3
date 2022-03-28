@@ -1,0 +1,286 @@
+GNU bash, version 4.4.20(1)-release (x86_64-pc-linux-gnu)
+ gcc -g p4original.c
+ ./a.out
+Enter the degree of the polynomial:4
+
+Enter the value of x:2
+
+Enter the coefficients of the polynomial:3
+
+Enter the coefficients of the polynomial:3
+
+Enter the coefficients of the polynomial:3
+
+Enter the coefficients of the polynomial:3
+
+Enter the coefficients of the polynomial:3
+3.000000x^0+3.000000x^1+3.000000x^2+3.000000x^3+3.000000x^4 at 2.000000 is93.000000
+ gdb ./a.out
+GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from ./a.out...done.
+(gdb) b main
+Breakpoint 1 at 0x9c7: file p4original.c, line 62.
+(gdb) r
+Starting program: /home/runner/practice-2/a.out 
+warning: Error disabling address space randomization: Operation not permitted
+
+Breakpoint 1, main () at p4original.c:62
+62  {
+(gdb) s
+65      n=inputn();
+(gdb) s
+inputn () at p4original.c:3
+3    {
+(gdb) s
+5       printf("Enter the degree of the polynomial:");
+(gdb) n
+6       scanf("%d",&n);
+(gdb) n
+Enter the degree of the polynomial:4
+7       return n;
+(gdb) n
+8   }
+(gdb) n
+main () at p4original.c:66
+66      x=inputx();
+(gdb) s
+inputx () at p4original.c:10
+10  {
+(gdb) s
+12      printf("\nEnter the value of x:");
+(gdb) n
+
+13      scanf("%f",&x);
+(gdb) n
+Enter the value of x:2
+14      return x;
+(gdb) n
+15  }
+(gdb) n
+main () at p4original.c:67
+67      inputco(n,a);
+(gdb) s
+inputco (n=4, a=0x7fff1b1fba00) at p4original.c:18
+18      for(int i=0;i<=n;i++)
+(gdb) n
+20          printf("\nEnter the coefficients of the polynomial:");
+(gdb) n
+
+21          scanf("%f",&a[i]);
+(gdb) n
+Enter the coefficients of the polynomial:3
+18      for(int i=0;i<=n;i++)
+(gdb) n
+20          printf("\nEnter the coefficients of the polynomial:");
+(gdb) n
+
+21          scanf("%f",&a[i]);
+(gdb) n
+Enter the coefficients of the polynomial:3
+18      for(int i=0;i<=n;i++)
+(gdb) n
+20          printf("\nEnter the coefficients of the polynomial:");
+(gdb) n
+
+21          scanf("%f",&a[i]);
+(gdb) n
+Enter the coefficients of the polynomial:3
+18      for(int i=0;i<=n;i++)
+(gdb) n
+20          printf("\nEnter the coefficients of the polynomial:");
+(gdb) n
+
+21          scanf("%f",&a[i]);
+(gdb) n
+Enter the coefficients of the polynomial:3
+18      for(int i=0;i<=n;i++)
+(gdb) n
+20          printf("\nEnter the coefficients of the polynomial:");
+(gdb) n
+
+21          scanf("%f",&a[i]);
+(gdb) n
+Enter the coefficients of the polynomial:3
+18      for(int i=0;i<=n;i++)
+(gdb) n
+23  }
+(gdb) n
+main () at p4original.c:68
+68      result=evaluate(n,x,a);
+(gdb) s
+evaluate (n=4, x=2, a=0x7fff1b1fba00) at p4original.c:26
+26      float result=0;int l=n;
+(gdb) n
+27      for(int i=0;i<=n;i++)
+(gdb) n
+29          float m=1;
+(gdb) n
+30        if(i==0)
+(gdb) n
+32          m=a[i];
+(gdb) n
+40        if(i==0)
+(gdb) n
+42        result=result+m;
+(gdb) n
+48        l--;
+(gdb) n
+27      for(int i=0;i<=n;i++)
+(gdb) n
+29          float m=1;
+(gdb) n
+30        if(i==0)
+(gdb) n
+35          for(int j=1;j<=i;j++)
+(gdb) n
+37              m=m*x;
+(gdb) n
+35          for(int j=1;j<=i;j++)
+(gdb) n
+40        if(i==0)
+(gdb) n
+46          result=result+(a[i]*m);
+(gdb) n
+48        l--;
+(gdb) n
+27      for(int i=0;i<=n;i++)
+(gdb) n
+29          float m=1;
+(gdb) n
+30        if(i==0)
+(gdb) n
+35          for(int j=1;j<=i;j++)
+(gdb) n
+37              m=m*x;
+(gdb) n
+35          for(int j=1;j<=i;j++)
+(gdb) n
+37              m=m*x;
+(gdb) n
+35          for(int j=1;j<=i;j++)
+(gdb) n
+40        if(i==0)
+(gdb) n
+46          result=result+(a[i]*m);
+(gdb) n
+48        l--;
+(gdb) n
+27      for(int i=0;i<=n;i++)
+(gdb) n
+29          float m=1;
+(gdb) n
+30        if(i==0)
+(gdb) n
+35          for(int j=1;j<=i;j++)
+(gdb) n
+37              m=m*x;
+(gdb) n
+35          for(int j=1;j<=i;j++)
+(gdb) n
+37              m=m*x;
+(gdb) n
+35          for(int j=1;j<=i;j++)
+(gdb) n
+37              m=m*x;
+(gdb) n
+35          for(int j=1;j<=i;j++)
+(gdb) n
+40        if(i==0)
+(gdb) n
+46          result=result+(a[i]*m);
+(gdb) n
+48        l--;
+(gdb) n
+27      for(int i=0;i<=n;i++)
+(gdb) n
+29          float m=1;
+(gdb) n
+30        if(i==0)
+(gdb) n
+35          for(int j=1;j<=i;j++)
+(gdb) n
+37              m=m*x;
+(gdb) n
+35          for(int j=1;j<=i;j++)
+(gdb) n
+37              m=m*x;
+(gdb) n
+35          for(int j=1;j<=i;j++)
+(gdb) n
+37              m=m*x;
+(gdb) n
+35          for(int j=1;j<=i;j++)
+(gdb) n
+37              m=m*x;
+(gdb) n
+35          for(int j=1;j<=i;j++)
+(gdb) n
+40        if(i==0)
+(gdb) n
+46          result=result+(a[i]*m);
+(gdb) n
+48        l--;
+(gdb) n
+27      for(int i=0;i<=n;i++)
+(gdb) n
+50      return result;
+(gdb) n
+51  }
+(gdb) n
+main () at p4original.c:69
+69      output(n,x,a,result);
+(gdb) s
+output (n=4, x=2, a=0x7fff1b1fba00, result=93) at p4original.c:54
+54      for(int i=0;i<n;i++)
+(gdb) n
+56        printf("%fx^%d+",a[i],i); 
+(gdb) n
+54      for(int i=0;i<n;i++)
+(gdb) n
+56        printf("%fx^%d+",a[i],i); 
+(gdb) n
+54      for(int i=0;i<n;i++)
+(gdb) n
+56        printf("%fx^%d+",a[i],i); 
+(gdb) n
+54      for(int i=0;i<n;i++)
+(gdb) n
+56        printf("%fx^%d+",a[i],i); 
+(gdb) n
+54      for(int i=0;i<n;i++)
+(gdb) n
+58      printf("%fx^%d at %f is",a[n],n,x);
+(gdb) n
+59      printf("%f\n",result);
+(gdb) n
+3.000000x^0+3.000000x^1+3.000000x^2+3.000000x^3+3.000000x^4 at 2.000000 is93.000000
+60  }
+(gdb) n
+main () at p4original.c:70
+70      return 0;
+(gdb) c
+Continuing.
+[Inferior 1 (process 92) exited normally]
+(gdb) p
+The history is empty.
+(gdb) l
+65      n=inputn();
+66      x=inputx();
+67      inputco(n,a);
+68      result=evaluate(n,x,a);
+69      output(n,x,a,result);
+70      return 0;
+71  }(gdb) 
