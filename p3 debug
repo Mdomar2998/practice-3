@@ -1,0 +1,128 @@
+gcc -g p3original.c
+ ./a.out
+Enter the value of n:5
+Enter the values of r:2
+The nCr value of 5C2 is: 10 
+ gdb ./a.out
+GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from ./a.out...done.
+(gdb) b main
+Breakpoint 1 at 0x84d: file p3original.c, line 36.
+(gdb) r
+Starting program: /home/runner/practice-2/a.out 
+warning: Error disabling address space randomization: Operation not permitted
+
+Breakpoint 1, main () at p3original.c:36
+36  {
+(gdb) s
+38    input_n_and_r(&n,&r);
+(gdb) s
+input_n_and_r (n=0x7ffdc5d89b5c, r=0x7ffdc5d89b60) at p3original.c:5
+5    printf("Enter the value of n:");
+(gdb) n
+6    scanf("%d",n);
+(gdb) n
+Enter the value of n:5
+7    printf("Enter the values of r:");
+(gdb) n
+8    scanf("%d",r);
+(gdb) n
+Enter the values of r:2
+9   }
+(gdb) n
+main () at p3original.c:39
+39    result=ncr(n,r);
+(gdb) s
+ncr (n=5, r=2) at p3original.c:13
+13    int nfact=1,rfact=1,nrfact=1,ncr;
+(gdb) n
+14    for(int i=1;i<=n;i++)
+(gdb) n
+16        nfact*=i;
+(gdb) n
+14    for(int i=1;i<=n;i++)
+(gdb) n
+16        nfact*=i;
+(gdb) n
+14    for(int i=1;i<=n;i++)
+(gdb) n
+16        nfact*=i;
+(gdb) n
+14    for(int i=1;i<=n;i++)
+(gdb) n
+16        nfact*=i;
+(gdb) n
+14    for(int i=1;i<=n;i++)
+(gdb) n
+16        nfact*=i;
+(gdb) n
+14    for(int i=1;i<=n;i++)
+(gdb) n
+18    for(int j=1;j<=r;j++)
+(gdb) n
+20        rfact*=j;
+(gdb) n
+18    for(int j=1;j<=r;j++)
+(gdb) n
+20        rfact*=j;
+(gdb) n
+18    for(int j=1;j<=r;j++)
+(gdb) n
+22    for(int k=1;k<=(n-r);k++)
+(gdb) n
+24        nrfact*=k;
+(gdb) n
+22    for(int k=1;k<=(n-r);k++)
+(gdb) n
+24        nrfact*=k;
+(gdb) n
+22    for(int k=1;k<=(n-r);k++)
+(gdb) n
+24        nrfact*=k;
+(gdb) n
+22    for(int k=1;k<=(n-r);k++)
+(gdb) n
+26    ncr=nfact/(rfact*nrfact);
+(gdb) n
+27    return ncr;
+(gdb) n
+28  }
+(gdb) n
+main () at p3original.c:40
+40    output(n,r,result);
+(gdb) s
+output (n=5, r=2, result=10) at p3original.c:32
+32    printf("The nCr value of %dC%d is: %d",n,r,result);
+(gdb) n
+33  }
+(gdb) n
+main () at p3original.c:41
+41  }(gdb) n
+__libc_start_main (main=0x555de8e00845 <main>, argc=1, argv=0x7ffdc5d89c58, 
+    init=<optimized out>, fini=<optimized out>, rtld_fini=<optimized out>, 
+    stack_end=0x7ffdc5d89c48) at ../csu/libc-start.c:344
+344 ../csu/libc-start.c: No such file or directory.
+(gdb) c
+Continuing.
+The nCr value of 5C2 is: 10[Inferior 1 (process 184) exited normally]
+(gdb) p
+The history is empty.
+(gdb) l
+339 in ../csu/libc-start.c
+(gdb) l
+339 in ../csu/libc-start.c
+(gdb) q
+ 
