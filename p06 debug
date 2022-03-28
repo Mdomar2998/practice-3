@@ -1,0 +1,102 @@
+GNU bash, version 4.4.20(1)-release (x86_64-pc-linux-gnu)
+gcc -g p06original.c;./a.out
+Enter the string
+sting
+Enter the substring
+sting
+The index of sting in sting is 0 gdb ./a.out
+GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from ./a.out...done.
+(gdb) b main
+Breakpoint 1 at 0x92e: file p06original.c, line 54.
+(gdb) r
+Starting program: /home/runner/practice-2/a.out 
+warning: Error disabling address space randomization: Operation not permitted
+
+Breakpoint 1, main () at p06original.c:54
+54  {
+(gdb) s
+57    input_string(string,substring);
+(gdb) s
+input_string (string=0x7ffcf3ba0a70 "\002", 
+    substring=0x7ffcf3ba0b40 "p\v\272\363\374\177") at p06original.c:4
+4     printf("Enter the string\n");
+(gdb) n
+Enter the string
+5     scanf("%s",string);
+(gdb) n
+sting
+6     printf("Enter the substring\n");
+(gdb) n
+Enter the substring
+7     scanf("%s",substring);
+(gdb) n
+sting
+8   }
+(gdb) n
+main () at p06original.c:58
+58    index=str_reverse(string,substring);
+(gdb) n
+59    output(string,substring,index);
+(gdb) s
+output (string=0x7ffcf3ba0a70 "sting", substring=0x7ffcf3ba0b40 "sting", 
+    index=0) at p06original.c:42
+42    int count=0,i;
+(gdb) n
+43    for(i=0;string[i]!='\0';i++)
+(gdb) n
+45      count++;
+(gdb) n
+43    for(i=0;string[i]!='\0';i++)
+(gdb) n
+45      count++;
+(gdb) n
+43    for(i=0;string[i]!='\0';i++)
+(gdb) n
+45      count++;
+(gdb) n
+43    for(i=0;string[i]!='\0';i++)
+(gdb) n
+45      count++;
+(gdb) n
+43    for(i=0;string[i]!='\0';i++)
+(gdb) n
+45      count++;
+(gdb) n
+43    for(i=0;string[i]!='\0';i++)
+(gdb) n
+47    if(index<count && index>=0)
+(gdb) n
+48      printf("The index of %s in %s is %d",substring,string,index);
+(gdb) n
+52  }
+(gdb) n
+main () at p06original.c:60
+60    return 0;
+(gdb) c
+Continuing.
+The index of sting in sting is 0[Inferior 1 (process 3930) exited normally]
+(gdb) p
+The history is empty.
+(gdb) l
+55    char string[200],substring[200];
+56    int index;
+57    input_string(string,substring);
+58    index=str_reverse(string,substring);
+59    output(string,substring,index);
+60    return 0;
+61  }(gdb) Quit
+(gdb) 
