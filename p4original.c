@@ -1,6 +1,6 @@
 #include<stdio.h>
 int inputn()
-{
+ {
     int n;
     printf("Enter the degree of the polynomial:");
     scanf("%d",&n);
