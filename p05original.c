@@ -54,4 +54,4 @@ int main()
   erotosthenes_sieve(x,y);
   out_put(x,y);
   return 0;
-}
+}gcc 
