@@ -82,4 +82,4 @@ The history is empty.
 37    return 0;
 38  }
 (gdb) Quit
-(gdb) 
+(gdb) .
