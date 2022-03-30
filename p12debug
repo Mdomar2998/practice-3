@@ -1,0 +1,190 @@
+ gdb ./a.out
+GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from ./a.out...done.
+(gdb) b main
+Breakpoint 1 at 0x939: file p12original.c, line 52.
+(gdb) r
+Starting program: /home/runner/practice-2/a.out 
+warning: Error disabling address space randomization: Operation not permitted
+
+Breakpoint 1, main () at p12original.c:52
+52      first = time(NULL);
+(gdb) s
+55      x = input();
+(gdb) s
+input () at p12original.c:43
+43  int input(){
+(gdb) s
+45      printf("Enter the number to find the borga of : \t");
+(gdb) n
+46      scanf("%d",&x);
+(gdb) n
+Enter the number to find the borga of :     20
+47      return x;
+(gdb) n
+48  }
+(gdb) n
+main () at p12original.c:56
+56      result = sum(x);
+(gdb) s
+sum (x=20) at p12original.c:25
+25      float sum= 1.0, term, prev_term = 1; 
+(gdb) n
+26      int i = 1;
+(gdb) n
+33          term = prev_term * x/((i+1)*(i+2));
+(gdb) n
+34          sum += term;
+(gdb) n
+35          prev_term = term;
+(gdb) n
+36          i+=2;
+(gdb) n
+38      } while (term>0.000001);
+(gdb) n
+33          term = prev_term * x/((i+1)*(i+2));
+(gdb) n
+34          sum += term;
+(gdb) n
+35          prev_term = term;
+(gdb) n
+36          i+=2;
+(gdb) n
+38      } while (term>0.000001);
+(gdb) n
+33          term = prev_term * x/((i+1)*(i+2));
+(gdb) n
+34          sum += term;
+(gdb) n
+35          prev_term = term;
+(gdb) n
+36          i+=2;
+(gdb) n
+38      } while (term>0.000001);
+(gdb) n
+33          term = prev_term * x/((i+1)*(i+2));
+(gdb) n
+34          sum += term;
+(gdb) n
+35          prev_term = term;
+(gdb) n
+36          i+=2;
+(gdb) n
+38      } while (term>0.000001);
+(gdb) n
+33          term = prev_term * x/((i+1)*(i+2));
+(gdb) n
+34          sum += term;
+(gdb) n
+35          prev_term = term;
+(gdb) n
+36          i+=2;
+(gdb) n
+38      } while (term>0.000001);
+(gdb) n
+33          term = prev_term * x/((i+1)*(i+2));
+(gdb) n
+34          sum += term;
+(gdb) n
+35          prev_term = term;
+(gdb) n
+36          i+=2;
+(gdb) n
+38      } while (term>0.000001);
+(gdb) n
+33          term = prev_term * x/((i+1)*(i+2));
+(gdb) n
+34          sum += term;
+(gdb) n
+35          prev_term = term;
+(gdb) n
+36          i+=2;
+(gdb) n
+38      } while (term>0.000001);
+(gdb) n
+33          term = prev_term * x/((i+1)*(i+2));
+(gdb) n
+34          sum += term;
+(gdb) n
+35          prev_term = term;
+(gdb) n
+36          i+=2;
+(gdb) n
+38      } while (term>0.000001);
+(gdb) n
+33          term = prev_term * x/((i+1)*(i+2));
+(gdb) n
+34          sum += term;
+(gdb) n
+35          prev_term = term;
+(gdb) n
+36          i+=2;
+(gdb) n
+38      } while (term>0.000001);
+(gdb) n
+33          term = prev_term * x/((i+1)*(i+2));
+(gdb) n
+34          sum += term;
+(gdb) n
+35          prev_term = term;
+(gdb) n
+36          i+=2;
+(gdb) n
+38      } while (term>0.000001);
+(gdb) n
+39      return sum;
+(gdb) n
+40  }
+(gdb) n
+main () at p12original.c:57
+57      printf("Borga is : %lf \n",result);
+(gdb) s
+__printf (format=0x55fb00200a75 "Borga is : %lf \n") at printf.c:28
+28  printf.c: No such file or directory.
+(gdb) n
+32  in printf.c
+(gdb) n
+33  in printf.c
+(gdb) n
+32  in printf.c
+(gdb) n
+33  in printf.c
+(gdb) n
+Borga is : 9.786383 
+37  in printf.c
+(gdb) n
+main () at p12original.c:58
+58      second = time(NULL);
+(gdb) s
+59      seconds = second - first;
+(gdb) n
+60      printf("%ld \n",seconds);
+(gdb) n
+99 
+61      return 0;
+(gdb) n
+63  }(gdb) c
+Continuing.
+[Inferior 1 (process 3621) exited normally]
+(gdb) p
+The history is empty.
+(gdb) l
+58      second = time(NULL);
+59      seconds = second - first;
+60      printf("%ld \n",seconds);
+61      return 0;
+62
+63  }(gdb) 
