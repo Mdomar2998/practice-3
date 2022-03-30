@@ -1,0 +1,105 @@
+ gdb ./a.out
+GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from ./a.out...done.
+(gdb) b main
+Breakpoint 1 at 0x831: file p007original.c, line 29.
+(gdb) r
+Starting program: /home/runner/practice-2/a.out 
+warning: Error disabling address space randomization: Operation not permitted
+
+Breakpoint 1, main () at p007original.c:29
+29    n=input();
+(gdb) s
+input () at p007original.c:6
+6   {
+(gdb) s
+8     printf("enter the number you want to find a square root of:");
+(gdb) n
+9     scanf("%f",&n);
+(gdb) n
+enter the number you want to find a square root of:25
+10    return n;
+(gdb) n
+11  }
+(gdb) n
+main () at p007original.c:30
+30    sqrtresult=my_sqrt(n);
+(gdb) s
+my_sqrt (n=25) at p007original.c:14
+14   float guess =n/2;
+(gdb) n
+15   float next = n/guess;
+(gdb) n
+16   while(fabs(guess-next)>0.000001)
+(gdb) n
+18     guess=(guess+next)/2;
+(gdb) n
+19     next=n/guess;
+(gdb) n
+16   while(fabs(guess-next)>0.000001)
+(gdb) n
+18     guess=(guess+next)/2;
+(gdb) n
+19     next=n/guess;
+(gdb) n
+16   while(fabs(guess-next)>0.000001)
+(gdb) n
+18     guess=(guess+next)/2;
+(gdb) n
+19     next=n/guess;
+(gdb) n
+16   while(fabs(guess-next)>0.000001)
+(gdb) n
+18     guess=(guess+next)/2;
+(gdb) n
+19     next=n/guess;
+(gdb) n
+16   while(fabs(guess-next)>0.000001)
+(gdb) n
+18     guess=(guess+next)/2;
+(gdb) n
+19     next=n/guess;
+(gdb) n
+16   while(fabs(guess-next)>0.000001)
+(gdb) n
+21     return guess;
+(gdb) n
+23  }
+(gdb) n
+main () at p007original.c:31
+31    output(n,sqrtresult);
+(gdb) s
+output (n=25, sqrt_result=5) at p007original.c:25
+25    printf("the square root of %f is %f\n",n,sqrt_result);
+(gdb) n
+the square root of 25.000000 is 5.000000
+26  }
+(gdb) n
+main () at p007original.c:32
+32    return 0;
+(gdb) c
+Continuing.
+[Inferior 1 (process 715) exited normally]
+(gdb) p
+The history is empty.
+(gdb) l
+27  int main(){
+28    int n,sqrtresult;
+29    n=input();
+30    sqrtresult=my_sqrt(n);
+31    output(n,sqrtresult);
+32    return 0;
+33  }(gdb) 
