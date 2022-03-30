@@ -1,0 +1,95 @@
+GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from ./a.out...done.
+(gdb) b main
+Breakpoint 1 at 0x8b5: file p7original.c, line 46.
+(gdb) r
+Starting program: /home/runner/practice-2/a.out 
+warning: Error disabling address space randomization: Operation not permitted
+
+Breakpoint 1, main () at p7original.c:46
+46    a=input();
+(gdb) s
+input () at p7original.c:21
+21  {
+(gdb) s
+23    printf("enter the fraction one a/b in the form a_b\n");
+(gdb) n
+enter the fraction one a/b in the form a_b
+24    scanf("%d%d",&F.num,&F.den);
+(gdb) n
+4
+5
+25    return F;
+(gdb) n
+26  }
+(gdb) n
+main () at p7original.c:47
+47    b=input();
+(gdb) s
+input () at p7original.c:21
+21  {
+(gdb) s
+23    printf("enter the fraction one a/b in the form a_b\n");
+(gdb) n
+enter the fraction one a/b in the form a_b
+24    scanf("%d%d",&F.num,&F.den);
+(gdb) n
+6
+7
+25    return F;
+(gdb) n
+26  }
+(gdb) n
+main () at p7original.c:48
+48    c=add_fractions(a,b);
+(gdb) s
+add_fractions (f1=..., f2=...) at p7original.c:32
+32    nu=f1.num * f2.den + f2.num * f1.den;
+(gdb) n
+33    de=f2.den * f1.den
+(gdb) n
+35    f3.num=nu/find_gcd(nu,de);
+(gdb) n
+36    f3.den=de/find_gcd(nu,de);
+(gdb) n
+37    return f3;
+(gdb) n
+38  }
+(gdb) n
+main () at p7original.c:49
+49    output(a,b,c);
+(gdb) s
+output (f1=..., f2=..., f3=...) at p7original.c:41
+41    printf("the sum of fractions %d/%d and %d/%d is given by %d/%d\n",f1.num,f1.den,f2.num,f2.den,f3.num,f3.den);
+(gdb) n
+the sum of fractions 4/5 and 6/7 is given by 58/35
+42  }
+(gdb) n
+main () at p7original.c:50
+50    return 0;
+(gdb) c
+Continuing.
+[Inferior 1 (process 261) exited normally]
+(gdb) p
+The history is empty.
+(gdb) l
+45    Fraction a,b,c;
+46    a=input();
+47    b=input();
+48    c=add_fractions(a,b);
+49    output(a,b,c);
+50    return 0;
+51  }(gdb) 
