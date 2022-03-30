@@ -2,7 +2,7 @@
 #include <math.h>
 #include <time.h>
 
-int fact(int x){
+ int fact(int x){
     
     if(x == 1)
     {
