@@ -1,0 +1,109 @@
+gdb ./a.out
+GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from ./a.out...done.
+(gdb) b main
+Breakpoint 1 at 0x952: file p008original.c, line 59.
+(gdb) r
+Starting program: /home/runner/practice-2/a.out 
+warning: Error disabling address space randomization: Operation not permitted
+
+Breakpoint 1, main () at p008original.c:59
+59  {
+(gdb) s
+62    input_two_string(a,b);
+(gdb) n
+enter any word:
+hello
+enter any word:
+hell
+63    ans=cmp(a,b);
+(gdb) s
+cmp (a=0x7fff99d130c0 "hello", b=0x7fff99d130e0 "hell") at p008original.c:11
+11    int i=0,result;
+(gdb) n
+12    while(a[i] !='\0' && b[i]!='\0')
+(gdb) n
+14      if(a[i]>b[i])
+(gdb) n
+19      else if(b[i]>a[i])
+(gdb) n
+26        i++;
+(gdb) n
+12    while(a[i] !='\0' && b[i]!='\0')
+(gdb) n
+14      if(a[i]>b[i])
+(gdb) n
+19      else if(b[i]>a[i])
+(gdb) n
+26        i++;
+(gdb) n
+12    while(a[i] !='\0' && b[i]!='\0')
+(gdb) n
+14      if(a[i]>b[i])
+(gdb) n
+19      else if(b[i]>a[i])
+(gdb) n
+26        i++;
+(gdb) n
+12    while(a[i] !='\0' && b[i]!='\0')
+(gdb) n
+14      if(a[i]>b[i])
+(gdb) n
+19      else if(b[i]>a[i])
+(gdb) n
+26        i++;
+(gdb) n
+12    while(a[i] !='\0' && b[i]!='\0')
+(gdb) n
+29  if(a[i]=='\0')
+(gdb) n
+33  else if(b[i]== '\0')
+(gdb) n
+35    result =-1;
+(gdb) n
+37  if(a[i]=='\0' && b[i]=='\0')
+(gdb) n
+41  return result;
+(gdb) n
+42  }
+(gdb) n
+main () at p008original.c:64
+64    output(a,b,ans);
+(gdb) s
+output (a=0x7fff99d130c0 "hello", b=0x7fff99d130e0 "hell", ans=-1)
+    at p008original.c:45
+45    if(ans== -1)
+(gdb) n
+47      printf("%s is greater than %s\n",a,b);
+(gdb) n
+hello is greater than hell
+57    }
+(gdb) n
+main () at p008original.c:65
+65    return 0;
+(gdb) c
+Continuing.
+[Inferior 1 (process 947) exited normally]
+(gdb) p
+The history is empty.
+(gdb) l
+60    char a[20],b[20];
+61    int ans;
+62    input_two_string(a,b);
+63    ans=cmp(a,b);
+64    output(a,b,ans);
+65    return 0;
+66  } 
