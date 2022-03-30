@@ -39,7 +39,7 @@ Breakpoint 1 at 0x97e: file p10original.c, line 40.
 The program is not being run.
 (gdb) r
 Starting program: /home/runner/practice-2/a.out 
-warning: Error disabling address space randomization: Operation not permitted
+warning: Error disabling address space randomization: Operation not permitted.
 
 Breakpoint 1, main () at p10original.c:40
 40  int main(){
