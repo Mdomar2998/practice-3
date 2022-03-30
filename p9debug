@@ -1,0 +1,55 @@
+ gdb ./a.out
+GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from ./a.out...done.
+(gdb) b main
+Breakpoint 1 at 0x91e: file p9original.c, line 27.
+(gdb) r
+Starting program: /home/runner/practice-2/a.out 
+warning: Error disabling address space randomization: Operation not permitted
+
+Breakpoint 1, main () at p9original.c:27
+27  int main(){
+(gdb) s
+29      input_camel_details(&radius,&height,&length);
+(gdb) n
+Enter the radius of the camel's stomach :   50
+Enter the height of the camel :     20
+Enter the length of the camel :     25
+30      weight = find_weight(radius,height,length);
+(gdb) n
+31      output(radius,height,length,weight);
+(gdb) s
+output (radius=50, height=20, length=25, weight=8781011) at p9original.c:23
+23      printf("The weight of the camel whose stomach radius is %0.2f and its height is %0.2f and its length is %0.2f is %0.2f \n   ",radius,height,length,weight);
+(gdb) n
+The weight of the camel whose stomach radius is 50.00 and its height is 20.00 and its length is 25.00 is 8781011.00 
+25  }
+(gdb) n
+main () at p9original.c:32
+32      return 0;
+(gdb) c
+Continuing.
+   [Inferior 1 (process 754) exited normally]
+(gdb) p
+The history is empty.
+(gdb) l
+27  int main(){
+28      float radius,height,length,weight;
+29      input_camel_details(&radius,&height,&length);
+30      weight = find_weight(radius,height,length);
+31      output(radius,height,length,weight);
+32      return 0;
+33  }(gdb) 
