@@ -57,7 +57,7 @@ output (Asis=..., status=0) at p11original.c:59
 (gdb) n
 70          printf("Camel status is unknown.");
 (gdb) n
-71          break;
+71 .         break;
 (gdb) n
 73  }
 (gdb) n
