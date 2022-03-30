@@ -1,0 +1,105 @@
+ gdb ./a.out
+GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from ./a.out...done.
+(gdb) b main
+Breakpoint 1 at 0x82f: file p003original.c, line 31.
+(gdb) r
+Starting program: /home/runner/practice-2/a.out 
+warning: Error disabling address space randomization: Operation not permitted
+
+Breakpoint 1, main () at p003original.c:31
+31    x=input();
+(gdb) s
+input () at p003original.c:3
+3   {
+(gdb) s
+5     printf("enter the three number\n");
+(gdb) n
+enter the three number
+6     scanf("%d",&a);
+(gdb) n
+1
+7     return a;
+(gdb) n
+8   }
+(gdb) n
+main () at p003original.c:32
+32    y=input();
+(gdb) s
+input () at p003original.c:3
+3   {
+(gdb) s
+5     printf("enter the three number\n");
+(gdb) n
+enter the three number
+6     scanf("%d",&a);
+(gdb) n
+2
+7     return a;
+(gdb) n
+8   }
+(gdb) n
+main () at p003original.c:33
+33    z=input();
+(gdb) s
+input () at p003original.c:3
+3   {
+(gdb) s
+5     printf("enter the three number\n");
+(gdb) n
+enter the three number
+6     scanf("%d",&a);
+(gdb) n
+3
+7     return a;
+(gdb) n
+8   }
+(gdb) n
+main () at p003original.c:34
+34    large=cmp(x,y,z);
+(gdb) s
+cmp (a=1, b=2, c=3) at p003original.c:11
+11    if(a>b && a>c)
+(gdb) n
+15    else if((b>c)&&(b>a))
+(gdb) n
+21    return c;
+(gdb) n
+23  }
+(gdb) n
+main () at p003original.c:35
+35    output(x,y,z,large);
+(gdb) s
+output (a=1, b=2, c=3, large=3) at p003original.c:26
+26    printf("large is %d",large);
+(gdb) n
+27  }
+(gdb) n
+main () at p003original.c:36
+36    return 0;
+(gdb) c
+Continuing.
+large is 3[Inferior 1 (process 582) exited normally]
+(gdb) p
+The history is empty.
+(gdb) l
+31    x=input();
+32    y=input();
+33    z=input();
+34    large=cmp(x,y,z);
+35    output(x,y,z,large);
+36    return 0;
+37  }
